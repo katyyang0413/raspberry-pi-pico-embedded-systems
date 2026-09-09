@@ -35,6 +35,13 @@ My main contributions to the project included:
 The source code and project report can be found in the [`morse-code-game`](morse-code-game/) folder.
 
 ---
+### Demo Video
+
+A demonstration of the completed Morse Code Learning Game is included in this repository.
+
+The video shows the game running on the Raspberry Pi Pico, including Morse code input, game progression and the hardware feedback used during gameplay.
+
+[▶ Watch the Morse Code Game Demo](morse-code-game/Morse-Code-Game-Demo.mp4)
 
 ## Interrupt-Driven Alarm
 
@@ -97,7 +104,8 @@ raspberry-pi-pico-embedded-systems/
 │   ├── assign02.S
 │   ├── CMakeLists.txt
 │   ├── D4-report.pdf
-│   └── ws2812.pio
+│   ├── ws2812.pio
+│   └── Morse-Code-Game-Demo.mp4
 │
 ├── temperature-adc-ws2812/
 │   ├── Lab11.c
