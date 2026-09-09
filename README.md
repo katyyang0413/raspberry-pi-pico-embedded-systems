@@ -8,10 +8,11 @@ The repository contains coursework projects covering interrupt-driven programmin
 
 ## Demo
 
-▶ **[Watch the demo video on YouTube](https://youtu.be/DaLJg6RK7xk?si=5Eo06S_x4g3icFgd)**
+### Morse Code Game Demo
 
----
+▶ **[Watch the Morse Code Game demo on YouTube](https://youtu.be/DaLJg6RK7xk?si=5Eo06S_x4g3icFgd)**
 
+This video demonstrates the **Morse Code Game** project contained in the `morse-code-game/` folder.
 ## Projects
 
 ### 1. Interrupt-Driven Alarm System
@@ -144,11 +145,27 @@ The projects in this repository use:
 
 ---
 
-## Repository Structure
+## Project Structure
 
 ```text
 raspberry-pi-pico-embedded-systems/
-├── interrupt-alarm/
-├── morse-code-game/
-├── temperature-adc-ws2812/
+├── interrupt-alarm/                  # Interrupt-driven alarm project
+│   ├── assign01.c
+│   ├── assign01.S
+│   ├── ws2812.pio
+│   └── CMakeLists.txt
+│
+├── morse-code-game/                  # Morse code game project
+│   ├── CMakeLists.txt                # Build configuration
+│   ├── D4-report.pdf                 # Project report
+│   ├── Morse-Code-Game-Demo.mp4      # Demo video
+│   ├── assign02.S                    # ARM Cortex-M0+ assembly
+│   ├── assign02.c                    # Main C source
+│   └── ws2812.pio                    # WS2812 PIO program
+│
+├── temperature-adc-ws2812/           # ADC temperature sensing + WS2812 LED
+│   ├── Lab11.c
+│   └── Lab11.S
+│
+├── screenshots/                      # Screenshots used in README
 └── README.md
