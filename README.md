@@ -53,6 +53,23 @@ The project used both C and ARM assembly and involved working with GPIO interrup
 
 The source code can be found in the [`interrupt-alarm`](interrupt-alarm/) folder.
 
+---
+
+## Temperature Sensor and RGB LED
+
+This lab used the RP2040's internal temperature sensor and ADC to read temperature data.
+
+The raw ADC reading was converted to a voltage and then to a temperature value using the RP2040 temperature sensor formula. A WS2812 RGB LED was also controlled using PIO to give colour feedback based on the measured temperature.
+
+The project used both C and ARM assembly:
+
+- C handled ADC helper functions, temperature conversion and RGB LED control
+- ARM assembly handled the repeated ADC reading loop
+- PIO was used to control the WS2812 LED
+- Temperature readings were printed over USB serial
+
+The recovered source files are available in the [`temperature-adc-ws2812`](temperature-adc-ws2812/) folder.
+
 ## Technologies
 
 - Raspberry Pi Pico (RP2040)
