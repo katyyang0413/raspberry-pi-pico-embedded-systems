@@ -1,6 +1,6 @@
 # Raspberry Pi Pico Embedded Systems
 
-A collection of embedded systems projects completed as part of my Computer Engineering degree at Trinity College Dublin using the Raspberry Pi Pico (RP2040).
+This is a project of embedded systems completed as part of my Computer Engineering degree at Trinity College Dublin using the Raspberry Pi Pico (RP2040).
 
 The projects involved programming in C and ARM assembly and working with interrupts, timers, GPIO and other hardware features of the RP2040.
 
