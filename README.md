@@ -1,115 +1,118 @@
 # Raspberry Pi Pico Embedded Systems
 
-This is a project of embedded systems completed as part of my Computer Engineering degree at Trinity College Dublin using the Raspberry Pi Pico (RP2040).
+A collection of embedded systems projects developed for the Raspberry Pi Pico (RP2040) using C/C++, ARM assembly, and the Pico SDK.
 
-The projects involved programming in C and ARM assembly and working with interrupts, timers, GPIO and other hardware features of the RP2040.
-
-## Morse Code Learning Game
-
-This was a team project where we developed an interactive game for learning Morse code using a Raspberry Pi Pico.
-
-The player enters Morse code using button presses, with short and long presses representing dots and dashes. The game checks the input against the expected character and gives feedback to the player.
-
-Some of the main features include:
-
-- Morse code input using GPIO interrupts
-- C and ARM assembly
-- Multiple game levels
-- Lives system
-- WS2812 RGB LED feedback
-- PWM buzzer output
-- Hardware timers and interrupts
-- Watchdog functionality
-
-### My Contribution
-
-My main contributions to the project included:
-
-- Implementing functions for controlling the WS2812 RGB LED
-- Working on the lives system and LED colour feedback
-- Helping implement the level progression system
-- Debugging and fixing build/code issues
-- Testing the final game
-- Helping prepare and demonstrate the completed project
-
-The source code and project report can be found in the [`morse-code-game`](morse-code-game/) folder.
-
----
-### Demo Video
-
-A demonstration of the completed Morse Code Learning Game is included in this repository.
-
-The video shows the game running on the Raspberry Pi Pico, including Morse code input, game progression and the hardware feedback used during gameplay.
-
-[▶ Watch the Morse Code Game Demo](morse-code-game/Morse-Code-Game-Demo.mp4)
-
-## Interrupt-Driven Alarm
-
-This project focused on using interrupts and external button events on the Raspberry Pi Pico.
-
-A hardware timer interrupt was used to control a flashing LED, while external buttons could change the behaviour of the system.
-
-The buttons were used to:
-
-- Pause and resume the LED
-- Increase the flashing rate
-- Decrease the flashing rate
-- Reset the timing when required
-
-The project used both C and ARM assembly and involved working with GPIO interrupts, hardware timers and the RP2040 interrupt system.
-
-The source code can be found in the [`interrupt-alarm`](interrupt-alarm/) folder.
+The projects explore low-level hardware control, sensor interfacing, interrupt handling, multicore execution, and performance analysis on an embedded platform.
 
 ---
 
-## Temperature Sensor and RGB LED
+## Demo
 
-This lab used the RP2040's internal temperature sensor and ADC to read temperature data.
+▶ **Demo Video:** [Watch on YouTube / Google Drive][((https://youtu.be/DaLJg6RK7xk?si=5Eo06S_x4g3icFgd))]
 
-The raw ADC reading was converted to a voltage and then to a temperature value using the RP2040 temperature sensor formula. A WS2812 RGB LED was also controlled using PIO to give colour feedback based on the measured temperature.
+---
 
-The project used both C and ARM assembly:
+## Preview
 
-- C handled ADC helper functions, temperature conversion and RGB LED control
-- ARM assembly handled the repeated ADC reading loop
-- PIO was used to control the WS2812 LED
-- Temperature readings were printed over USB serial
+![Raspberry Pi Pico Project Preview](screenshots/preview.png)
 
-The recovered source files are available in the [`temperature-adc-ws2812`](temperature-adc-ws2812/) folder.
+---
 
-## Technologies
+## Technical Highlights
 
-- Raspberry Pi Pico (RP2040)
+- Embedded development in C/C++ using the Raspberry Pi Pico SDK
+- GPIO configuration and hardware control
+- ADC-based internal temperature sensing
+- WS2812 RGB LED control using PIO
+- Interrupt-driven programming
+- Multicore execution across both RP2040 CPU cores
+- Flash-cache performance analysis
+- ARM Cortex-M0+ assembly integration
+- CMake-based build system
+
+---
+
+## Projects
+
+### ADC Temperature Monitoring
+
+Used the RP2040's internal temperature sensor through the ADC interface to read raw sensor values and convert them into temperature measurements.
+
+The application also controls a WS2812 RGB LED to provide a visual indication of temperature.
+
+Key technical details:
+
+- ADC initialization
+- Internal temperature sensor enable
+- ADC input 4
+- Raw ADC acquisition
+- Temperature conversion
+- WS2812 RGB output through PIO
+
+---
+
+### Interrupt-Driven Applications
+
+Developed applications using hardware interrupts rather than continuously polling inputs.
+
+This included configuring GPIO events and interrupt service routines to react to external hardware events while allowing the processor to perform other work.
+
+---
+
+### Multicore Performance Testing
+
+Investigated the use of both RP2040 processor cores for computational workloads.
+
+A benchmark of 100,000 iterations produced approximately:
+
+| Configuration | Total Execution Time |
+|---|---:|
+| Single Core | 1.08 s |
+| Two Cores | 0.75 s |
+
+Using both cores reduced the total execution time by approximately 30%.
+
+---
+
+### Flash Cache Performance
+
+Measured the effect of disabling the RP2040 flash cache on program execution.
+
+The tests demonstrated a significant increase in execution time when the cache was disabled, highlighting the importance of memory performance in embedded applications.
+
+---
+
+## Hardware
+
+- Raspberry Pi Pico
+- RP2040 dual-core ARM Cortex-M0+ microcontroller
+- WS2812 RGB LED
+- Internal temperature sensor / ADC
+- GPIO inputs
+
+---
+
+## Software & Tools
+
 - C
+- C++
 - ARM Cortex-M0+ Assembly
-- Pico SDK
-- GPIO
-- Hardware interrupts and timers
-- PIO / WS2812 RGB LED
-- PWM
+- Raspberry Pi Pico SDK
 - CMake
+- VS Code
+- Wokwi
+
+---
 
 ## Repository Structure
 
 ```text
 raspberry-pi-pico-embedded-systems/
-├── interrupt-alarm/
-│   ├── assign01.c
-│   ├── assign01.S
-│   ├── CMakeLists.txt
-│   └── ws2812.pio
-│
-├── morse-code-game/
-│   ├── assign02.c
-│   ├── assign02.S
-│   ├── CMakeLists.txt
-│   ├── D4-report.pdf
-│   ├── ws2812.pio
-│   └── Morse-Code-Game-Demo.mp4
-│
-├── temperature-adc-ws2812/
-│   ├── Lab11.c
-│   └── Lab11.S
-│
+├── lab03/
+├── lab09/
+├── lab10/
+├── lab11/
+├── screenshots/
+│   └── preview.png
+├── CMakeLists.txt
 └── README.md
-```
