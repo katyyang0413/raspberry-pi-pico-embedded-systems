@@ -8,7 +8,7 @@ The projects explore low-level hardware control, sensor interfacing, interrupt h
 
 ## Demo
 
-▶ **Demo Video:** [Watch on YouTube / Google Drive][((https://youtu.be/DaLJg6RK7xk?si=5Eo06S_x4g3icFgd))]
+▶ **Demo Video:** [Watch on YouTube / Google Drive]https://youtu.be/DaLJg6RK7xk?si=5Eo06S_x4g3icFgd
 
 ---
 
